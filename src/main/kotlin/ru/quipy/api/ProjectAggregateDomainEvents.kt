@@ -11,6 +11,7 @@ const val STATUS_CREATED = "STATUS_CREATED_EVENT"
 const val STATUS_CHANGED = "STATUS_CHANGED_EVENT"
 const val TASK_ADDED_IN_PROJECT = "TASK_ADDED_IN_PROJECT_EVENT"
 const val TASK_CREATED = "TASK_CREATED_EVENT"
+const val STATUS_DELETED ="STATUS_DELETED_EVENT"
 const val TASK_TITLE_CHANGED = "TASK_TITLE_CHANGED_EVENT"
 const val TASK_STATUS_CHANGED = "TASK_STATUS_CHANGED_EVENT"
 const val TASK_EXECUTOR_ASSIGNED = "TASK_EXECUTOR_ASSIGNED_EVENT"
@@ -50,12 +51,12 @@ class StatusCreatedEvent(
     name = STATUS_CREATED
 )
 
-@DomainEvent(name = STATUS_CREATED)
+@DomainEvent(name = STATUS_DELETED)
 class StatusDeletedEvent(
     val projectId: UUID,
     val statusId: UUID
 ) : Event<ProjectAggregate>(
-    name = STATUS_CREATED
+    name = STATUS_DELETED
 )
 
 @DomainEvent(name = STATUS_CHANGED)

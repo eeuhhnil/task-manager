@@ -30,7 +30,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/addParticipant")
     fun addParticipantToProject(
         @PathVariable projectId: UUID,
         @RequestParam participantId: UUID
@@ -40,7 +40,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/addStatus")
     fun addStatus(
         @PathVariable projectId: UUID,
         @RequestParam statusName: String,
@@ -51,7 +51,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/deleteStatus")
     fun deleteStatus(
         @PathVariable projectId: UUID,
         @RequestParam statusId: UUID
@@ -61,7 +61,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/changeStatusTitle")
     fun changeStatusTitle (
         @PathVariable projectId: UUID,
         @RequestParam statusId: UUID,
@@ -72,7 +72,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/task")
     fun createTask(
         @PathVariable projectId: UUID,
         @RequestParam taskTitle: String
@@ -82,7 +82,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/changeTaskTitle")
     fun changeTaskTitle(
         @PathVariable projectId: UUID,
         @RequestParam taskId: UUID,
@@ -93,7 +93,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/changeStatus")
     fun changeTaskStatus(
         @PathVariable projectId: UUID,
         @RequestParam taskId: UUID,
@@ -104,7 +104,7 @@ class ProjectController(val projectEsService: EventSourcingService<UUID, Project
         }
     }
 
-    @PostMapping("/{projectId}")
+    @PostMapping("/{projectId}/addExecutor")
     fun addExecutorToTask(
         @PathVariable projectId: UUID,
         @RequestParam taskId: UUID,
